@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=MuseoModerno:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+    <title>Refactored Calculator</title>
+</head>
+<body>
+
+    <div id="calc">
+        <div class="window">
+            <p></p>
+        </div>
+
+        <div class="digits">
+            <div class="digit" digit="1"><p>1</p></div>
+            <div class="digit" digit="2"><p>2</p></div>
+            <div class="digit" digit="3"><p>3</p></div>
+            <div class="digit" digit="4"><p>4</p></div>
+            <div class="digit" digit="5"><p>5</p></div>
+            <div class="digit" digit="6"><p>6</p></div>
+            <div class="digit" digit="7"><p>7</p></div>
+            <div class="digit" digit="8"><p>8</p></div>
+            <div class="digit" digit="9"><p>9</p></div>
+            <div class="digit" digit="0"><p>0</p></div>
+            <div class="digit" digit="."><p>.</p></div>
+        </div>
+        <div class="operators">
+            <div class="operator delete"><p>CE</p></div>
+            <div class="operator plus"><p>+</p></div>
+            <div class="operator minus"><p>-</p></div>
+            <div class="operator multiply"><p>x</p></div>
+            <div class="operator divide"><p>:</p></div>
+            <div class="operator compute"><p>=</p></div>
+        </div>
+    </div>
+    <script>
+        "use strict";
+        const calc = document.getElementById("calc");
+        calc.addEventListener("pointermove", ({clientX: x, clientY: y}) => {
+            document.documentElement.style.setProperty("--xpos", `${x - 50}px`);
+            document.documentElement.style.setProperty("--ypos", `${y - 50}px`);
+        })
+    </script>
+</body>
+</html>
